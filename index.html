@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redeem Page</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  label { display: block; margin-top: 10px; }
+  input { padding: 5px; margin-top: 5px; width: 150px; }
+</style>
+</head>
+<body>
+
+<h2>Redeem Product</h2>
+
+<label>Point per Unit:</label>
+<input type="number" id="price" value="2400" readonly>
+
+<label>Quantity:</label>
+<input type="number" id="qty" value="1" min="1" oninput="updateTotal()">
+
+<label><b>Points Consumed:</b></label>
+<input type="text" id="total" readonly>
+
+<script>
+function updateTotal() {
+  const price = Number(document.getElementById("price").value);
+  const qty = Number(document.getElementById("qty").value);
+  document.getElementById("total").value = price * qty;
+}
+updateTotal(); // initialize once
+</script>
+
+</body>
+</html>
